@@ -17,7 +17,7 @@ A web funcionará como un panel de control onde o mecánico pode rexistrar entra
 
 ## 2- Contextualización
 
-Este proxecto responde á necesidade de moitos talleres pequenos de contar cunha presenza dixital funcional que vaia máis alá dunha simple web informativa.
+Este proxecto responde a necesidade de moitos talleres pequenos de contar cunha presenza dixital funcional que vaia máis alá dunha simple web informativa.
 
 - **En que consiste o proxecto?** É unha plataforma web de xestión (Backoffice) e consulta (Frontend). O propósito principal é centralizar toda a actividade do taller nunha ferramenta na nube accesible dende o ordenador do taller ou tablets.
 
