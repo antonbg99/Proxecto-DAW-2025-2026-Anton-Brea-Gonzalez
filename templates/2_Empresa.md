@@ -19,81 +19,94 @@
 
 ## 1.1- Idea de negocio
 
-> _EXPLICACIÓN_: Define o producto central, o valor engadido e a utilidade. Se se ogrecen productos aumentados, indicalo tamén.
+A idea consiste en **AutoCare Pro**, unha plataforma SaaS (Software as a Service) de xestión integral para talleres mecánicos. O **producto central** é un panel de control na nube que permite a dixitalización de orzamentos, entradas de vehículos e estados de reparación.
+
+O **valor engadido** reside na transparencia cara ao cliente final, quen pode consultar o estado do seu vehículo en tempo real mediante un código privado. Como **producto aumentado**, ofrécese un sistema de notificacións automáticas e a posibilidade de xestión dende dispositivos móbiles (tablets) dentro do propio taller, eliminando o uso de papel.
 
 ## 1.2- Xustificación da idea
 
-> _EXPLICACIÓN_: Neste apartado incluirase a información necesaria para xustificar a realización do proxecto. Debe indicarse como xurdiu a idea do proxecto, que obxectivo se persegue coa súa posta en marcha e/ou que problema vai resolver.
->
-> En este apartado indicade a nivel de idea de negocio:
->
-> - ¿Cal é a necesidade ou necesidades que se pretenden cubrir ou satisfacer?
-> - ¿Existen na actualidade aplicacións ou productos que tenten dar resposta a esa(s) necesidade(s)? ¿En que medida o conseguen?
-> - ¿Trátase de un segmento de mercado desabastecido ou insuficientemente atendido?
-> - ¿Un produto ineficiente? Un mercado novo?
->
-> Para sustentar as xustificación deberás proporcionar datos. Fontes máis utilizadas: INE, IGE, Informes sectoriais de
-> Industria, Statista... Deberás facer unha DAFO.
+A idea xorde tras detectar que moitos talleres pequenos e medianos seguen a utilizar métodos tradicionais (papel ou follas de cálculo locais) que dificultan a comunicación co cliente e a organización interna. O **obxectivo** é profesionalizar o sector mediante unha ferramenta accesible e económica.
+
+- **Necesidade:** Dixitalización de procesos administrativos e mellora da confianza do cliente no servizo técnico.
+- **Existencia de productos:** Existen ERPs xenéricos ou softwares de automoción complexos e caros. **AutoCare Pro** consegue unha solución máis lixeira, intuitiva e centrada na comunicación co usuario.
+- **Segmento:** Trátase dun sector (pequenos talleres de barrio) insuficientemente atendido por solucións de software modernas debido ao alto custo das alternativas actuais.
+- **DAFO:**
+
+  | PUNTOS FORTES | PUNTOS DEBODES |
+  | :--- | :--- |
+  | **Fortalezas:** Baixo custo de mantemento (Laravel), interface intuitiva, consulta en tempo real para o cliente. | **Debilidades:** Marca nova no mercado, recursos limitados para marketing inicial. |
+  | **Oportunidades:** Crecente dixitalización do sector servizos, axudas estatais (Kit Dixital), ausencia de competidores áxiles na zona. | **Ameazas:** Competidores consolidados con máis funcións, reticencia ao cambio de mecánicos tradicionais. |
 
 ## 1.3- Segmento de clientes
 
-> _EXPLICACIÓN_: Neste apartado debes indicar a quen irá dirixido o negocio, os potenciales clientes, respostando as seguinte pregunta: ¿A quen está dirixido?
->
-> Debes:
->
-> - Indicar o segmento ou segmentos cos rasgos principais e cuantificar o mercado.
-> - E se é o caso, diferenciar entre usuario e cliente.
+O negocio diríxese principalmente a:
+
+1. **Clientes:** Clientes de pequenos e medianos talleres mecánicos, de chapa e pintura ou de electricidade do automóbil que buscan modernizar a súa xestión.
+2. **Usuarios:** Os mecánicos do taller (que alimentan o sistema) e os **clientes finais** do taller (propietarios de coches), que utilizan a web para consultar o estado da súa reparación.
+
+O mercado potencial é amplo, dado que segundo o INE/IGE, o sector do mantemento de vehículos conta con miles de microempresas en Galicia que requiren solucións de baixo custo.
 
 ## 1.4- Competencia
 
-> _EXPLICACIÓN_: Neste apartado deberase indicar que outras empresas operan no mercado. Que cota de mercado teñen e como están posicionadas. Existencia de productos/servizos substitutivos. Como están posicionados.
+A competencia divídese en:
+
+- **Software especializado (Directa):** Programas como GT Estimate ou ferramentas de grandes redes de talleres. Teñen gran cota de mercado pero son complexos e de elevado custo mensual.
+- **Métodos tradicionais (Substitutivos):** O uso de Excel ou axendas físicas. Están moi posicionados en talleres antigos pero son ineficientes para a xestión moderna.
+- **Posicionamento:** AutoCare Pro posicionase como a alternativa **"Easy & Low Cost"**, enfocada na usabilidade por riba da cantidade excesiva de funcións.
 
 ## 1.5- Proposta de valor
 
-> _EXPLICACIÓN_: **Apartado fundamental.**
->
-> - En que se diferencia fronte os competidores.
-> - Que melloras terá fronte os competidores.
-> - Que valor aporta ao mercado.
-> - ¿Porqué mercarán/contratarán este producto/servizo/idea fronte o resto?
+**AutoCare Pro** diferénciase por:
+
+- **Transparencia:** O portal de consulta para o cliente reduce as chamadas telefónicas preguntando "como vai o meu coche?".
+- **Simplicidade:** Implementación rápida baseada en tecnoloxía web, sen necesidade de instalar software local.
+- **Mellora:** Interface limpa fronte a programas de escritorio obsoletos e visualmente cargados.
+- **Por que nos elixirán?** Pola facilidade de uso, a mellora da imaxe profesional que proxectan cara aos seus clientes e o prezo competitivo do servizo.
 
 ## 1.6- Forma xurídica
 
-> _EXPLICACIÓN_: Neste apartado deberedes indicar a forma xurídica: autónomo, soc. Cooperativa, SL,.. Explicando (nun par de frases) por que escolledes esta forma
+A forma xurídica escollida é **Empresario Individual (Autónomo)** (ou **Sociedade Limitada Unipersoal** se o investimento inicial fose maior).
+Escóllese esta forma pola súa **simplicidade nos trámites de constitución** e os menores custos de xestión inicial, ideal para un proxecto de software que inicia cun único desenvolvedor.
 
 ## 1.7- Investimentos
 
-> _EXPLICACIÓN_: Neste apartado idicaremos o investimentos, aínda que sexa, só unha enumeración de todo o que necesitan (locais, infraestruturas, equipos, suministros, mobiliario...) cuantificando cada elemento.
+Para poñer en marcha AutoCare Pro necesítase:
+
+- **Equipos informáticos:** Ordenador de desenvolvemento e servidor de probas (1.200 €).
+- **Infraestrutura:** Hosting anual e dominios (150 €/ano).
+- **Licenzas e Software:** Ferramentas de deseño e IDEs (0 € ao usar Open Source).
+- **Marketing:** Campañas en redes sociais e visitas presenciais a talleres (500 € iniciais).
 
 ### 1.7.1- Custos
 
-> > _EXPLICACIÓN_: Neste apartado idicaremos o invertimento
->
-> - Diferenzando custos fixos de variables.
-> - Computando impostos e custos sociais.
+- **Custos Fixos:** Autónomos (cuota reducida), hosting, conexión a internet.
+- **Custos Variables:** Publicidade por clic (ADS), posibles comisións por pasarelas de pago se se integra cobro online.
+- **Impostos:** IVE (21%) nas facturas e IRPF correspondente.
 
 ### 1.7.2- Ingresos
 
-> _EXPLICACIÓN_: Neste apartado indicarase unha previsión de ventas e unha política de prezos. Isto implicar apuntar unha previsión de ventas e unha política de prezos.
+A política de prezos basearase nun modelo de **Suscrición Mensual (SaaS)**:
+
+- **Plan Básico:** 29 €/mes para 1 taller/3 mecánicos sen pasarela de clientes.
+- **Plan Premium:** 59 €/mes con funcións de notificacións SMS para os clientes.
+- **Previsión:** Acadar os 20 clientes no primeiro ano de actividade.
 
 ## 1.8- Viabilidade
 
 ### 1.8.1- Viabilidade técnica
 
-> _EXPLICACIÓN_: Neste subapartado deberás defender tendo en conta os datos xa aportados, a viabilidade da realización do proyecto.
-> Evidentemente, para poder xustificar a viabilidade económica do proyecto deberás ter en conta os ingresos. **Ainda que está na parte de empresa, este apartado é interesante dende o punto de vista técnico**
->
-> - Será posible dispoñer dos recursos humanos e medios de produción necesarios (materias primas, maquinaria, instalacións, etc.)?
-> - Existe algún impedimento técnico que dificulte o proceso produtivo?
+O proxecto é totalmente viable. A elección de **Laravel (PHP) + MySQL** garante unha estrutura robusta e escalable.
+
+- **Recursos:** O equipo humano que conta cos coñecementos para a implementación.
+- **Medios:** Só se require un servidor web estándar con soporte PHP, amplamente dispoñible no mercado. Non existen impedimentos técnicos graves.
 
 ### 1.8.2 - Viabilidade económica
 
-> _EXPLICACIÓN_: Neste subapartado deberás defender con datos a viabilidade da realización do proyecto, para elo debes indicar os custos e investimentos:
+A viabilidade económica sostense no baixo investimento inicial (asset-light). Ao ser un producto dixital, o custo de reproducilo é cero unha vez desenvolvido. Con apenas 10-15 clientes subscritos, os ingresos cubrirían os custos fixos de mantemento e seguridade social.
 
 ### 1.8.3- Conclusión
 
-> - É viable?
-> - Os beneficios do proxecto son superiores aos costes?
-> - As perdas poden cubrirse vía financiamento (por parte da administración pública, con subvencións, etc)?
+O proxecto **é viable**.
+Os beneficios potenciais a medio prazo superan os custos operativos. Ademais, ao tratarse dunha solución de dixitalización, o proxecto é susceptible de recibir subvencións como o **Kit Dixital** para pemes, o que facilitaría a captación de clientes sen que estes teñan que realizar un desembolso inicial importante.
 
 [**<-Anterior**](../../README.md)
