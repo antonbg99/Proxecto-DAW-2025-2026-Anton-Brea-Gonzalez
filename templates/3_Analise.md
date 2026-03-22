@@ -8,57 +8,64 @@
   - [5- Normativa](#5--normativa)
   - [6- Melloras futuras](#6--melloras-futuras)
 
-> *EXPLICACION*: Este documento describe os requirimentos para "nome do proxecto" especificando que funcionalidade ofrecerá e de que xeito.
+Este documento describe os requirimentos para **AutoCare Pro**, especificando as funcionalidades que ofrecerá a plataforma de xestión para talleres e o sistema de consulta para clientes finais.
 
 ## 1- Descrición Xeral
 
->*EXPLICACION*: Descrición Xeral do proxecto
+**AutoCare Pro** é unha solución SaaS (Software as a Service) deseñada para modernizar a xestión interna dos talleres mecánicos. O proxecto consiste nunha aplicación web que centraliza a información de clientes, vehículos e orzamentos, eliminando a necesidade de soportes físicos (papel).
+
+A plataforma ofrece un panel de control privado para os profesionais do taller e unha interface pública simplificada para os clientes, permitindo que estes últimos estean informados en todo momento sobre o progreso das súas reparacións mediante un sistema de seguimento en tempo real.
 
 ## 2- Funcionalidades
 
->*EXPLICACION* Describir que servizos ou operacións se van poder realizar por medio do noso proxecto, indicando que actores interveñen en cada caso.
->
-> Enumeradas, de maneira que na fase de deseño poidamos definir o diagrama ou configuración correspondente a cada funcionalidade.
-> Cada función ten uns datos de entrada e uns datos de saída. Entre os datos de entrada e de saída, realízase un proceso, que debe ser explicado.
+A continuación detállanse as operacións principais que se poden realizar no sistema:
 
-Exemplo:
-
-| Acción   |  Descrición        |
-|----------|--------------------|
-| Alta de productos   | Dar de alta os productos na base de datos|
-| Modificar productos | Modificación de productos na base de datos|
-| Presentación dos productos  | Mostra dos productos por medio da páxina web |
+| Acción | Descrición | Actores | Proceso (Entrada/Saída) |
+| :--- | :--- | :--- | :--- |
+| **Autenticación** | Acceso seguro ao panel de xestión. | Administrador, Mecánico | **Entrada:** Email e contrasinal. **Proceso:** Verificación en BD. **Saída:** Token de sesión e acceso ao dashboard. |
+| **Alta de Clientes** | Rexistro de novos propietarios de vehículos. | Administrador, Mecánico | **Entrada:** Datos persoais (DNI, telf, nome). **Proceso:** Validación e gardado en BD. **Saída:** Confirmación de rexistro. |
+| **Xestión de Vehículos** | Vincular coches a clientes rexistrados. | Administrador, Mecánico | **Entrada:** Matrícula, modelo, bastidor. **Proceso:** Relación en base de datos. **Saída:** Ficha de vehículo creada. |
+| **Creación de Orzamentos** | Desglose de pezas e man de obra para unha avaría. | Administrador, Mecánico | **Entrada:** Conceptos, prezos, horas. **Proceso:** Cálculo de totais e IVE. **Saída:** Documento PDF/Vista detallada. |
+| **Seguimento de Reparación** | Actualización do estado do vehículo (Pendente/En curso/Listo). | Mecánico | **Entrada:** Selección de estado no panel. **Proceso:** Actualización de timestamp en BD. **Saída:** Notificación visual no sistema. |
+| **Consulta Pública** | Visualización do progreso sen necesidade de login. | Cliente Final | **Entrada:** Código privado (ID reparación). **Proceso:** Búsqueda en BD por token único. **Saída:** Liña de tempo de progreso. |
 
 ## 3- Tipos de usuarios
 
-> *EXPLICACION* Describir os tipos de usuario que poderán acceder ao noso sistema. Habitualmente os tipos de usuario veñen definidos polas funcionalidades ás cales teñen acceso. En termos xerais existen moitos grupos de usuarios: anónimos, novos, rexistrados, bloqueados, confirmados, verificados, administradores, etc.
->
-> Exemplo:
->
-> - Usuario xenérico, que terá acceso a ...
-> - Usuario técnico, que poderá...
+O acceso ao sistema está definido por tres perfís claramente diferenciados:
+
+- **Administrador (Dono do taller):** Ten acceso total. Pode xestionar a facturación, dar de alta ou baixa a outros usuarios mecánicos e configurar os datos globais do taller (logo, dirección, prezos de man de obra).
+- **Usuario Técnico (Mecánico):** Ten acceso ás funcionalidades operativas. Pode rexistrar entradas de coches, crear orzamentos e actualizar o estado das reparacións, pero non ten acceso á configuración global nin a estatísticas de ingresos do negocio.
+- **Cliente Final (Usuario de consulta):** Non require conta nin rexistro. Só ten acceso a unha vista de lectura mediante un código alfanumérico privado para consultar o estado do seu vehículo.
 
 ## 4- Contorno operacional
 
-> *EXPLICACION* Neste apartado deben describirse os recursos necesarios, dende o punto de vista do usuario, para poder operar coa aplicación web. Habitualmente consiste nun navegador web actualizado e unha conexión a internet.
-Se é necesario algún hardware ou software adicional, deberá indicarse.
+Para poder operar coa aplicación **AutoCare Pro**, os requisitos son mínimos, garantindo a súa accesibilidade:
+
+- **Hardware:** Calquera dispositivo con capacidade de navegación web (Ordenador, Tablet ou Smartphone).
+- **Software:** Navegador web actualizado (Google Chrome, Firefox, Safari ou Edge).
+- **Conexión:** Acceso a internet estable para a sincronización de datos co servidor na nube.
+- **Servidor (Backend):** O sistema require un contorno con PHP e base de datos MySQL (xa configurado no hosting do proxecto).
 
 ## 5- Normativa
 
-> *EXPLICACION* Investigarase que normativa vixente afecta ao desenvolvemento do proxecto e de que maneira. O proxecto debe adaptarse ás esixencias legais dos territorios onde vai operar.
-> 
-> Pola natureza dos sistema de información, unha lei que se vai a ter que mencionar de forma obrigatoria é la [Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDPGDD)](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673). O ámbito da LOPDPGDD é nacional. Se a aplicación está pensada para operar a nivel europeo, tamén se debe facer referencia á [General Data Protection Regulation (GDPR)](https://eur-lex.europa.eu/eli/reg/2016/679/oj). Na documentación debe afirmarse que o proxecto cumpre coa normativa vixente.
->
-> Para cumplir a LOPDPGDD e/ou GDPR debe ter un apartado na web onde se indique quen é a persoa responsable do tratamento dos datos e para que fins se van utilizar. Habitualmente esta información estructúrase nos seguintes apartados:
->
-> - Aviso legal.
-> - Política de privacidade.
-> - Política de cookies.
->
-> É acosenllable ver [exemplos de webs](https://www.spotify.com/es/legal/privacy-policy/) que conteñan textos legais referenciando a LOPDPGDD ou GDPR.
+O proxecto axústase estrictamente ás seguintes normativas legais vixentes:
+
+- **Protección de Datos (LOPDPGDD e GDPR):** Ao xestionar datos de carácter persoal (nomes, teléfonos e matrículas), o sistema garante a confidencialidade e seguridade dos datos. Implementarase un rexistro de consentimento e a posibilidade de exercitar os dereitos de acceso, rectificación e cancelación.
+- **LSSI-CE:** Cumprimento da Lei de Servizos da Sociedade da Información para as comunicacións electrónicas e avisos legais.
+
+A aplicación contará cos seguintes apartados obrigatorios:
+
+- **Aviso legal:** Identificando ao titular da explotación do software.
+- **Política de privacidade:** Detallando que os datos se usan exclusivamente para a xestión do taller.
+- **Política de cookies:** Informando sobre as cookies técnicas necesarias para a sesión de usuario.
 
 ## 6- Melloras futuras
 
-> *EXPLICACION* É posible que o noso proxecto se centre en resolver un problema concreto que se poderá ampliar no futuro con novas funcionalidades, novas interfaces, etc.
+AutoCare Pro está deseñado de xeito modular para permitir as seguintes ampliacións:
+
+- **Pasarela de Pagos:** Integración con Stripe ou PayPal para permitir ao cliente pagar a reparación directamente dende a web.
+- **Notificacións automáticas:** Envío de SMS ou correos electrónicos automáticos cando o estado do coche cambie a "Listo para entregar".
+- **Estatísticas Avanzadas:** Gráficas de rendemento para o administrador (pezas máis usadas, tempo medio por reparación, etc.).
+- **APP Móbil Nativa:** Desenvolvemento dunha aplicación para Android/iOS que permita o escaneo de matrículas mediante a cámara.
 
 [**<-Anterior**](../../README.md)

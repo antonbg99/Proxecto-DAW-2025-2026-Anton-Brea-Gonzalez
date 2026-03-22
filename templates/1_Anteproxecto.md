@@ -29,39 +29,54 @@ Analizamos diversas tecnoloxías web para o desenvolvemento de **AutoCare Pro**:
 
 | **Alternativa** | **Viabilidade técnica** | **Viabilidade económica** | **Temporalidade** | **Valoración Global** |
 | ------ | ------ | ------ | ------ | ------ |
-| A1 | Baixa-media (4/10): Web con Java Spring Boot + React. Spring Boot ofrece unha arquitectura sólida pero excesivamente complexa para o tempo dispoñible no ciclo de DAW. | Media (6/10): Require hosting especializado para servidores de aplicacións Java. | Viabilidade baixa (3/10): Curva de aprendizaxe moi pronunciada. | **4.5/10** |
-| A2 | Media-Alta (7/10): Web con Node.js + React. Moi fluída pero require moito esforzo en configurar a seguridade e a estrutura do servidor dende cero. | Alta (8/10): Hosting económico en plataformas cloud. | Viabilidade media (7/10): Estimado en 4 meses. | **7.5/10** |
-| A3 | Alta (9/10): Desenvolvemento web con PHP (Laravel) + Tailwind CSS. É a opción máis equilibrada para crear unha páxina web de xestión robusta en pouco tempo. | Alta (9/10): Hosting compartido moi barato (dende 3€/mes). | Viabilidade alta (9/10): Permite ter a web lista en 2-3 meses. | **9/10** |
-| A4 | Media (7/10): Web baseada en CMS (WordPress + Plugins). Páxinas rápidas e robustas. | Alta (9/10): Moi económico. | Viabilidade alta (8/10): Moi rápido de montar pero pouco flexible. | **8/10** |
+| **A1: Java Spring Boot + React** | Baixa-media (4/10): Arquitectura sólida pero excesivamente complexa para o tempo dispoñible no ciclo de DAW. | Media (6/10): Require hosting especializado para Java. | Baixa (3/10): Curva de aprendizaxe moi pronunciada. | **4.5/10** |
+| **A2: Node.js + React** | Media-Alta (7/10): Moi fluída pero require moito esforzo en configurar a seguridade e a estrutura do servidor dende cero. | Alta (8/10): Hosting económico en plataformas cloud. | Media (6/10): Estimado en 4-5 meses. | **7.0/10** |
+| **A3: PHP (Laravel) + Tailwind** | **Alta (9/10):** É a opción máis equilibrada. Laravel ofrece ferramentas integradas (Eloquent, Blade, Auth) que aceleran o desenvolvemento. | **Alta (9/10):** Hosting compartido moi barato e accesible. | **Alta (9/10):** Permite ter un MVP funcional en 3 meses. | **9/10** |
 
 ### 3.2 Xustificación da alternativa
 
-Tras analizar os resultados, mantense a dúbida entre a **Alternativa A3 (Laravel)** e a **Alternativa A4 (WordPress)**. A decisión final dependerá do grao de personalización necesario para o sistema de xestión do taller e do tempo dedicado á codificación fronte á configuración de módulos existentes.
+Tras analizar as opcións, a alternativa elixida é a **A3 (Laravel)**. Esta decisión fundaméntase en que Laravel permite construír unha aplicación robusta e escalable en moito menos tempo que as alternativas A1 ou A2, grazas á súa filosofía de "desenvolvemento rápido". Ao ser un proxecto de xestión con moita interacción coa base de datos, o ORM Eloquent de Laravel facilita a integridade dos datos sen a complexidade técnica de Spring Boot.
 
 ## 4- Requirimentos técnicos
 
-Para que a páxina web sexa funcional e profesional, defínense os seguintes escenarios técnicos segundo a arquitectura escollida:
+Para que a páxina web sexa funcional e profesional, defínense os seguintes requisitos técnicos:
 
-- **Infraestrutura Común:** Dominio (.com ou .es), hosting con soporte para PHP/MySQL e certificados SSL (HTTPS).
-- **Escenario A (Laravel):**
-  - **Backend:** Framework **Laravel (PHP)** para unha lóxica de negocio a medida e xestión de API.
-  - **Frontend:** **HTML5**, **Tailwind CSS** e **JavaScript** (Blade templates).
-  - **Bases de Datos:** **MySQL** con deseño relacional personalizado.
-- **Escenario B (WordPress):**
-  - **Plataforma:** Core de **WordPress** optimizado para SEO e autoxestión.
-  - **Maquetación:** Uso de editores visuais (Elementor/WPBakery) e temas *responsive*.
-  - **Funcionalidades:** Plugins específicos para a xestión de citas e bases de datos de clientes preconfiguradas.
+- **Infraestrutura:**
+  - **Hosting:** Servidor Linux con soporte para PHP 8.2+, MySQL 8.0, 2GB de RAM e 20GB de almacenamento SSD.
+  - **Dominio:** Rexistro de dominio `.com` ou `.es` con certificado **SSL (HTTPS)** activo para a protección de datos dos clientes.
+- **Backend:**
+  - Framework **Laravel (PHP)** para a lóxica de negocio.
+  - Motor de modelos **Blade** para a xeración dinámica das vistas dende o lado do servidor.
+- **Frontend:**
+  - **HTML5** e **Tailwind CSS** para un deseño responsivo e moderno.
+  - **JavaScript** para interaccións dinámicas na interface de usuario.
+- **Base de Datos:**
+  - **MySQL** con deseño relacional para a xestión de clientes, vehículos e orzamentos.
 
 ## 5- Planificación
 
-A planificación do proxecto axustarase lixeiramente dependendo da vía técnica escollida:
+A planificación detalla as fases necesarias para o desenvolvemento completo do software, dende o estudo inicial ata o despregue final:
 
-| Fase | Duración | Descrición (A3: Laravel / A4: WordPress) |
-| --- | --- | --- |
-| **Estudo e Deseño** | 3 semanas | Definición de requisitos, esquema de datos e prototipado en Figma. |
-| **Implementación** | 7 semanas | **A3:** Programación desde cero da lóxica e vistas. / **A4:** Instalación, configuración de plugins e personalización. |
-| **Probas e QA** | 2 semanas | Verificación de seguridade, probas de carga e corrección de bugs. |
-| **Documentación e Despregue** | 2 semanas | Redacción da memoria final e subida ao servidor de produción. |
+```mermaid
+gantt
+    title Planificación AutoCare Pro
+    dateFormat  YYYY-MM-DD
+    section Análise
+    Análise de Requisitos         :a1, 2026-04-01, 15d
+    Deseño de Procesos            :a2, after a1, 15d
+    section Deseño
+    Deseño Base de Datos          :d1, after a2, 15d
+    Deseño UI/UX Figma            :d2, after d1, 15d
+    section Implementación
+    Configuración Laravel         :i1, after d2, 30d
+    Desenvolvemento Frontend      :i2, after i1, 25d
+    Integración e Notificacións   :i3, after i2, 20d
+    section QA e Peche
+    Probas e QA                   :t1, after i3, 15d
+    Documentación                 :t2, after t1, 10d
+    Despregue                     :t3, after t2, 10d
+    
+```
 
 ---
 
